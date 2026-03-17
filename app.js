@@ -225,9 +225,24 @@ window.addEventListener("scroll", () => {
    NAV SCROLL STATE
    ───────────────────────────────────────────── */
 const nav = document.getElementById("nav");
-window.addEventListener("scroll", () => {
+function updateNav() {
   nav.classList.toggle("scrolled", window.scrollY > 60);
-}, { passive: true });
+}
+updateNav(); // apply immediately on load (handles page refresh while scrolled)
+window.addEventListener("scroll", updateNav, { passive: true });
+
+/* ─────────────────────────────────────────────
+   BACK TO TOP
+   ───────────────────────────────────────────── */
+const backToTop = document.getElementById("backToTop");
+if (backToTop) {
+  window.addEventListener("scroll", () => {
+    backToTop.classList.toggle("visible", window.scrollY > 400);
+  }, { passive: true });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
 
 /* ─────────────────────────────────────────────
    HAMBURGER
