@@ -920,57 +920,63 @@ body:not(:hover) .cursor-follower { opacity: 0; }
 }
 .gallery-item:hover .gallery-img { transform: scale(1.06); }
 .gallery-img--1 {
-  background:
-    linear-gradient(135deg, rgba(212,160,23,.15), rgba(255,69,0,.1)),
-    repeating-linear-gradient(45deg, rgba(212,160,23,.03) 0, rgba(212,160,23,.03) 1px, transparent 0, transparent 50%);
-  background-size: cover, 20px 20px;
+  background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/2aX6VPBzuDen-LY3qS_qpw/ls.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .gallery-img--2 {
-  background: linear-gradient(135deg, rgba(255,69,0,.15), rgba(212,160,23,.08));
+  background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/YlEF9xj-hVaJz_pDiJ7QiA/ls.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .gallery-img--3 {
-  background: linear-gradient(135deg, rgba(0,180,216,.1), rgba(212,160,23,.1));
+  background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/j5CHhdmSVXiIcXPcyGBa2w/ls.jpg");
+  background-size: cover;
+  background-position: center;
 }
 .gallery-img--4 {
-  background: linear-gradient(135deg, rgba(212,160,23,.12), rgba(255,69,0,.08));
+  background-image: url("https://s3-media0.fl.yelpcdn.com/bphoto/EgALRwfQAWKQQhkC_NOotw/ls.jpg");
+  background-size: cover;
+  background-position: center;
+}
+/* Bottom-fade overlay for label legibility over real photos */
+.gallery-img::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,.65) 0%, rgba(8,8,8,.1) 45%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+  transition: opacity .4s;
+}
+.gallery-item:hover .gallery-img::before {
+  opacity: .85;
 }
 .gallery-label {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
   font-family: var(--font-head);
   font-size: .75rem;
   letter-spacing: .15em;
   text-transform: uppercase;
   color: var(--gold);
-  background: rgba(8,8,8,.8);
-  padding: 6px 14px;
+  background: rgba(8,8,8,.55);
+  padding: 5px 12px;
   border-radius: 4px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(212,160,23,.2);
-  opacity: 0;
-  transform: translateY(8px);
-  transition: all .3s var(--ease-smooth);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(212,160,23,.25);
+  opacity: 1;
+  transition: color .3s, background .3s;
 }
 .gallery-item:hover .gallery-label {
-  opacity: 1;
-  transform: translateY(0);
+  color: #fff;
+  background: rgba(212,160,23,.85);
+  border-color: transparent;
 }
-/* Placeholder food art for gallery items */
-.gallery-img::after {
-  content: '🍖';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 4rem;
-  opacity: .15;
-  pointer-events: none;
-}
-.gallery-img--1::after { content: '🥩'; }
-.gallery-img--2::after { content: '🧀'; }
-.gallery-img--3::after { content: '🍽️'; }
-.gallery-img--4::after { content: '🔥'; font-size: 6rem; }
+/* Photo gallery — real images, no placeholder overlays */
+.gallery-img::after { content: none; }
 
 /* ---------- CONTACT ---------- */
 .contact-section {
@@ -1942,8 +1948,6 @@ a, button, .btn, .section-dot, .pay-badge,
   .gallery-img::after { font-size: 3rem; }
   .gallery-img--4::after { font-size: 4rem; }
   .gallery-label {
-    opacity: 1;
-    transform: none;
     font-size: .68rem;
     padding: 4px 10px;
     bottom: 10px;
@@ -2021,8 +2025,7 @@ a, button, .btn, .section-dot, .pay-badge,
    TOUCH DEVICE SPECIFICS
    ============================================ */
 @media (hover: none) {
-  /* Gallery labels always visible on touch (no hover) */
-  .gallery-label { opacity: 1; transform: none; }
+  /* Gallery labels — suppress hover color flip on touch */
   /* Suppress JS-style hover transforms on touch cards */
   .menu-card:hover,
   .steak-card:hover,
