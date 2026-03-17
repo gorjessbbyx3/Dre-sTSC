@@ -1176,7 +1176,7 @@ a.contact-card { display: block; }
   position: fixed;
   bottom: 32px;
   right: 28px;
-  z-index: 900;
+  z-index: 10000;
   width: 46px;
   height: 46px;
   border-radius: 50%;

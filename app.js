@@ -168,20 +168,22 @@ const cursorFollower = document.getElementById("cursor-follower");
 let mouseX = 0, mouseY = 0;
 let followerX = 0, followerY = 0;
 
-document.addEventListener("mousemove", (e) => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursor.style.left = mouseX + "px";
-  cursor.style.top  = mouseY + "px";
-});
+if (cursor && cursorFollower) {
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + "px";
+    cursor.style.top  = mouseY + "px";
+  });
 
-(function animateFollower() {
-  followerX += (mouseX - followerX) * 0.12;
-  followerY += (mouseY - followerY) * 0.12;
-  cursorFollower.style.left = followerX + "px";
-  cursorFollower.style.top  = followerY + "px";
-  requestAnimationFrame(animateFollower);
-})();
+  (function animateFollower() {
+    followerX += (mouseX - followerX) * 0.12;
+    followerY += (mouseY - followerY) * 0.12;
+    cursorFollower.style.left = followerX + "px";
+    cursorFollower.style.top  = followerY + "px";
+    requestAnimationFrame(animateFollower);
+  })();
+}
 
 const hoverEls = document.querySelectorAll(
   "a, button, .menu-card, .steak-card, .shrimp-card, .contact-card, .gallery-item, .section-dot"
@@ -226,6 +228,7 @@ window.addEventListener("scroll", () => {
    ───────────────────────────────────────────── */
 const nav = document.getElementById("nav");
 function updateNav() {
+  if (!nav) return;
   nav.classList.toggle("scrolled", window.scrollY > 60);
 }
 updateNav(); // apply immediately on load (handles page refresh while scrolled)
@@ -249,16 +252,18 @@ if (backToTop) {
    ───────────────────────────────────────────── */
 const hamburger = document.getElementById("hamburger");
 const navLinks  = document.getElementById("navLinks");
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-  navLinks.classList.toggle("open");
-});
-navLinks.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click", () => {
-    hamburger.classList.remove("active");
-    navLinks.classList.remove("open");
+if (hamburger && navLinks) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("open");
   });
-});
+  navLinks.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("open");
+    });
+  });
+}
 
 /* ─────────────────────────────────────────────
    HERO CANVAS — EMBERS + SMOKE + STARS
