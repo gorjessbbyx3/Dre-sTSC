@@ -1158,6 +1158,18 @@ a.contact-card { display: block; }
   font-style: italic;
   color: rgba(212,160,23,.4);
 }
+.footer-powered {
+  margin-top: 18px;
+  font-size: .72rem;
+  letter-spacing: .08em;
+  color: rgba(255,255,255,.25);
+}
+.footer-powered a {
+  color: rgba(212,160,23,.55);
+  text-decoration: none;
+  transition: color .25s;
+}
+.footer-powered a:hover { color: var(--gold); }
 
 /* ---------- WAVE DIVIDERS ---------- */
 .wave-divider {
