@@ -1604,58 +1604,6 @@ a.contact-card { display: block; }
   100% { transform: translate(-50%, -50%) scale(1); opacity: 0; width: 200px; height: 200px; }
 }
 
-/* ---------- MOBILE ---------- */
-@media (max-width: 900px) {
-  .nav { padding: 16px 24px; }
-  .nav.scrolled { padding: 10px 24px; }
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    inset: 0;
-    background: rgba(8,8,8,.97);
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    z-index: 999;
-  }
-  .nav-links.open a {
-    font-size: 2rem;
-    letter-spacing: .2em;
-    color: var(--text);
-  }
-  .hamburger { display: flex; z-index: 1001; }
-  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-  .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
-  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-  .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-img-frame { max-height: 320px; }
-  .about-img-wrap { display: none; }
-  .menu-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .steak-grid { grid-template-columns: 1fr; }
-  .shrimp-grid { grid-template-columns: 1fr; }
-  .gallery-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-  }
-  .gallery-item--tall { grid-row: span 1; }
-  .gallery-item--wide { grid-column: span 2; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .sides-drinks-grid { grid-template-columns: 1fr; }
-  .sides-divider { display: none; }
-  .menu-description-card { flex-direction: column; }
-  .about-stats { gap: 24px; }
-}
-@media (max-width: 600px) {
-  .hero-bold { font-size: 2rem; letter-spacing: .08em; }
-  .gallery-grid { grid-template-columns: 1fr; }
-  .gallery-item--wide { grid-column: span 1; }
-  .gallery-item--tall { grid-row: span 1; }
-  body { cursor: auto; }
-  .cursor, .cursor-follower { display: none; }
-}
-
 /* ============================================
    PAYMENT BADGES
    ============================================ */
@@ -1783,7 +1731,7 @@ a.contact-card { display: block; }
   color: var(--text-muted);
 }
 
-/* Nav as a link on menu page */
+/* Nav logo as link (menu.html) */
 a.nav-logo {
   text-decoration: none;
   color: inherit;
@@ -1801,12 +1749,288 @@ a.nav-logo {
 }
 
 /* ============================================
-   MENU TEASER — RESPONSIVE
+   GLOBAL TOUCH IMPROVEMENTS
    ============================================ */
-@media (max-width: 768px) {
-  .menu-teaser-grid { grid-template-columns: 1fr 1fr; }
+/* Prevent 300ms tap delay on all interactive elements */
+a, button, .btn, .section-dot, .pay-badge,
+.menu-card, .steak-card, .shrimp-card,
+.gallery-item, .contact-card, .menu-teaser-item {
+  touch-action: manipulation;
 }
-@media (max-width: 480px) {
-  .menu-teaser-grid { grid-template-columns: 1fr; }
-  .page-hero { height: 220px; }
+/* Remove iOS blue flash on tap */
+* { -webkit-tap-highlight-color: transparent; }
+
+/* iOS notch / home indicator safe area */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .footer {
+    padding-bottom: calc(32px + env(safe-area-inset-bottom));
+  }
+  .nav-links.open {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ============================================
+   TABLET — max 900px
+   ============================================ */
+@media (max-width: 900px) {
+  /* Nav */
+  .nav { padding: 14px 20px; }
+  .nav.scrolled { padding: 10px 20px; }
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: rgba(8,8,8,.97);
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    z-index: 999;
+  }
+  .nav-links.open a {
+    font-size: 1.8rem;
+    letter-spacing: .2em;
+    color: var(--text);
+    padding: 8px 20px;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+  }
+  .hamburger {
+    display: flex;
+    z-index: 1001;
+    padding: 10px;
+    cursor: pointer;
+    margin-right: -10px;
+  }
+  .hamburger span { width: 22px; }
+  .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+  .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(-8px); }
+  .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+  /* Section padding */
+  .about             { padding: 72px 0 96px; }
+  .menu-section      { padding: 72px 0 96px; }
+  .sides-section     { padding: 72px 0 96px; }
+  .gallery-section   { padding: 72px 0 96px; }
+  .contact-section   { padding: 72px 0; }
+  .menu-teaser-section { padding: 72px 0 96px; }
+  .menu-payment-section { padding: 48px 0 64px; }
+
+  /* Section headers */
+  .section-header { margin-bottom: 48px; }
+
+  /* About */
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-img-frame { max-height: 320px; }
+  .about-img-wrap { display: none; }
+  .about-stats { gap: 24px; }
+
+  /* Menu grids */
+  .menu-grid { grid-template-columns: repeat(2, 1fr); }
+  .steak-grid { grid-template-columns: repeat(3, 1fr); }
+  .shrimp-grid { grid-template-columns: repeat(3, 1fr); }
+  .menu-description-card { flex-direction: column; gap: 20px; }
+  .category-sub { margin-left: 44px; }
+
+  /* Sides */
+  .sides-drinks-grid { grid-template-columns: 1fr; }
+  .sides-divider { display: none; }
+
+  /* Gallery */
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+  }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--wide { grid-column: span 2; }
+
+  /* Contact */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Menu teaser */
+  .menu-teaser-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 36px 0; }
+
+  /* Page hero */
+  .page-hero { height: 240px; }
+}
+
+/* ============================================
+   LARGE MOBILE — max 600px
+   ============================================ */
+@media (max-width: 600px) {
+  /* Disable desktop-only UX */
+  body { cursor: auto; }
+  .cursor, .cursor-follower { display: none; }
+  .trail-canvas { display: none; }
+  .section-counter { display: none; }
+
+  /* Layout base */
+  .container { padding: 0 16px; }
+  .section-header { margin-bottom: 32px; }
+
+  /* ---- Nav ---- */
+  .nav { padding: 12px 16px; }
+  .nav.scrolled { padding: 10px 16px; }
+  .nav-logo { font-size: .95rem; }
+  .nav-logo-img { width: 30px; height: 30px; }
+  .nav-links.open { gap: 24px; }
+  .nav-links.open a { font-size: 1.4rem; min-height: 48px; }
+
+  /* ---- Hero ---- */
+  .hero-badge {
+    font-size: .6rem;
+    letter-spacing: .14em;
+    padding: 6px 16px;
+    margin-bottom: 18px;
+  }
+  .hero-bold { font-size: clamp(1.7rem, 7vw, 2.3rem); letter-spacing: .08em; }
+  .hero-sub { font-size: .78rem; letter-spacing: .16em; margin-bottom: 28px; }
+  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
+  .hero-ctas .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .hero-content { padding: 0 16px; }
+  .hero-scroll-hint { bottom: 20px; }
+  .hero-scroll-line { height: 36px; }
+
+  /* ---- About ---- */
+  .about { padding: 56px 0 72px; }
+  .about-stats { justify-content: center; flex-wrap: wrap; gap: 20px; }
+  .stat { min-width: 88px; }
+
+  /* ---- Menu section ---- */
+  .menu-section { padding: 56px 0 72px; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .menu-card-front { padding: 20px 16px; }
+  .menu-category { margin-bottom: 48px; }
+  .category-icon { font-size: 1.6rem; }
+  .category-sub { margin: -12px 0 18px 36px; font-size: .82rem; }
+  .menu-description-card { padding: 22px 16px; gap: 16px; }
+  .menu-description-card-badge {
+    width: 76px; height: 76px;
+    font-size: .62rem;
+    align-self: center;
+  }
+  .steak-grid { grid-template-columns: 1fr; gap: 10px; }
+  .steak-card { padding: 22px 18px; }
+  .steak-size { font-size: 1.4rem; margin-bottom: 12px; }
+  .shrimp-grid { grid-template-columns: 1fr; gap: 10px; }
+  .shrimp-card { padding: 22px 18px; }
+  .shrimp-price { font-size: 1.8rem; }
+  .shrimp-count { font-size: 1.3rem; }
+
+  /* ---- Sides ---- */
+  .sides-section { padding: 56px 0 72px; }
+  .sides-col-title { font-size: 1.15rem; margin-bottom: 18px; }
+  .side-item { padding: 11px 0; gap: 12px; }
+  .side-item-name { font-size: .82rem; }
+  .side-item-price { font-size: .92rem; }
+  .delivery-notice { padding: 14px 14px; gap: 12px; font-size: .8rem; border-radius: 8px; }
+  .delivery-notice-icon { font-size: 1.5rem; }
+
+  /* ---- Gallery ---- */
+  .gallery-section { padding: 56px 0 72px; }
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 10px;
+  }
+  .gallery-item { min-height: 170px; }
+  .gallery-item--tall { grid-row: span 1; }
+  .gallery-item--wide { grid-column: span 1; }
+  .gallery-img::after { font-size: 3rem; }
+  .gallery-img--4::after { font-size: 4rem; }
+  .gallery-label {
+    opacity: 1;
+    transform: none;
+    font-size: .68rem;
+    padding: 4px 10px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  /* ---- Contact ---- */
+  .contact-section { padding: 56px 0; }
+  .contact-card { padding: 26px 18px; }
+  .contact-card-icon { font-size: 2rem; margin-bottom: 10px; }
+  .contact-card h4 { font-size: .72rem; }
+  .contact-card p { font-size: .95rem; }
+  .contact-bottom { padding-top: 32px; }
+  .contact-mahalo { font-size: 1.1rem; }
+  .contact-note { font-size: .74rem; }
+
+  /* ---- Payments ---- */
+  .accepted-payments { margin-bottom: 20px; }
+  .accepted-label { font-size: .62rem; margin-bottom: 10px; }
+  .payment-badges-row { gap: 8px; justify-content: center; }
+  .payment-row { gap: 10px; margin-bottom: 28px; }
+  .payment-pill { padding: 10px 16px; gap: 8px; }
+  .payment-label { font-size: .62rem; }
+  .payment-handle { font-size: .88rem; }
+
+  /* ---- Menu teaser ---- */
+  .menu-teaser-section { padding: 56px 0 72px; }
+  .menu-teaser-grid { grid-template-columns: 1fr; gap: 10px; margin: 24px 0; }
+  .menu-teaser-item { padding: 13px 14px; font-size: .78rem; gap: 10px; }
+  .menu-teaser-icon { font-size: 1.2rem; }
+  .btn--large { padding: 15px 32px; font-size: .88rem; }
+
+  /* ---- Page hero (menu.html) ---- */
+  .page-hero { height: 195px; }
+  .page-hero-title { font-size: clamp(1.9rem, 8vw, 2.8rem); }
+  .page-hero-sub { font-size: .72rem; letter-spacing: .12em; }
+  .page-hero-content { padding: 0 16px; }
+  .menu-payment-section { padding: 36px 0 52px; }
+
+  /* ---- Footer ---- */
+  .footer { padding: 32px 16px; }
+  .footer-logo { flex-direction: column; gap: 10px; }
+  .footer-logo-text { align-items: center; }
+  .footer-script { font-size: 1.9rem; }
+  .footer-logo-img { width: 52px; height: 52px; }
+  .footer-copy { font-size: .72rem; }
+  .footer-sub { font-size: .8rem; }
+}
+
+/* ============================================
+   SMALL MOBILE — max 400px
+   ============================================ */
+@media (max-width: 400px) {
+  .container { padding: 0 12px; }
+  .section-title { font-size: clamp(1.7rem, 8.5vw, 2.2rem); }
+  .btn { padding: 12px 18px; font-size: .78rem; }
+  .btn--large { padding: 14px 24px; font-size: .8rem; }
+  .hero-ctas .btn { max-width: 260px; }
+  .nav { padding: 10px 12px; }
+  .nav-logo-img { width: 28px; height: 28px; }
+  .payment-badges-row { gap: 6px; }
+  .payment-pill { padding: 8px 12px; }
+  .payment-handle { font-size: .8rem; }
+  .hero-scroll-hint { display: none; }
+  .page-hero { height: 170px; }
+  .page-hero-title { font-size: clamp(1.7rem, 9vw, 2.2rem); }
+  .menu-teaser-item { font-size: .74rem; padding: 12px 12px; }
+  .steak-size { font-size: 1.3rem; }
+  .shrimp-price { font-size: 1.6rem; }
+  .contact-card { padding: 22px 14px; }
+  .footer-logo { gap: 8px; }
+}
+
+/* ============================================
+   TOUCH DEVICE SPECIFICS
+   ============================================ */
+@media (hover: none) {
+  /* Gallery labels always visible on touch (no hover) */
+  .gallery-label { opacity: 1; transform: none; }
+  /* Suppress JS-style hover transforms on touch cards */
+  .menu-card:hover,
+  .steak-card:hover,
+  .shrimp-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+  .gallery-item:hover .gallery-img { transform: none; }
+  .menu-teaser-item:hover { transform: none; }
+  .pay-badge:hover { transform: none; box-shadow: 0 3px 12px rgba(0,0,0,.5); }
 }
