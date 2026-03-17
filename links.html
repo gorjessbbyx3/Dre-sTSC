@@ -281,32 +281,93 @@
       letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 18px;
     }
 
-    .lb-pay-badges {
+    /* Card chips row */
+    .lb-pay-cards {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
-    .lb-pay-badges svg {
-      display: block;
-      border-radius: 5px;
-      box-shadow: 0 2px 8px rgba(0,0,0,.4);
-      transition: transform .2s;
+    .lb-card-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-family: 'Oswald', sans-serif;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .04em;
+      border: 1px solid transparent;
     }
 
-    .lb-pay-badges svg:hover {
-      transform: translateY(-2px) scale(1.05);
+    .lb-card-chip--visa {
+      background: #1A1F71;
+      color: #fff;
+      border-color: #2a31a8;
+      font-style: italic;
+      letter-spacing: .08em;
+    }
+    .lb-card-chip--mc {
+      background: #1a1a1a;
+      color: #fff;
+      border-color: #333;
+    }
+    .lb-card-chip--mc .mc-circles {
+      display: inline-flex;
+      align-items: center;
+    }
+    .lb-card-chip--mc .mc-circles span {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+    }
+    .lb-card-chip--mc .mc-circles span:first-child {
+      background: #EB001B;
+      margin-right: -5px;
+      z-index: 1;
+    }
+    .lb-card-chip--mc .mc-circles span:last-child {
+      background: #F79E1B;
+    }
+    .lb-card-chip--amex {
+      background: #007BC1;
+      color: #fff;
+      border-color: #0091e0;
+    }
+    .lb-card-chip--discover {
+      background: #fff;
+      color: #231F20;
+      border-color: #ddd;
+    }
+    .lb-card-chip--discover .disc-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #E65C00;
+      flex-shrink: 0;
     }
 
-    .lb-pay-handles {
+    /* Separator */
+    .lb-pay-sep {
+      width: 60%;
+      height: 1px;
+      background: rgba(212,160,23,.15);
+      margin: 0 auto 18px;
+    }
+
+    /* Digital payment pills */
+    .lb-pay-digital {
       display: flex;
       justify-content: center;
-      gap: 16px;
+      gap: 12px;
       flex-wrap: wrap;
     }
 
@@ -314,15 +375,27 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2px;
-      background: rgba(255,255,255,.04);
-      border: 1px solid rgba(212,160,23,.2);
-      border-radius: 12px;
-      padding: 10px 20px;
+      gap: 4px;
+      border-radius: 14px;
+      padding: 12px 22px;
+      min-width: 130px;
+    }
+
+    .lb-pay-pill--venmo {
+      background: rgba(61,149,206,.12);
+      border: 1px solid rgba(61,149,206,.35);
+    }
+    .lb-pay-pill--cashapp {
+      background: rgba(0,214,79,.1);
+      border: 1px solid rgba(0,214,79,.3);
+    }
+    .lb-pay-pill--cash {
+      background: rgba(212,160,23,.08);
+      border: 1px solid rgba(212,160,23,.25);
     }
 
     .lb-pay-pill-label {
-      font-size: .65rem;
+      font-size: .62rem;
       letter-spacing: .12em;
       text-transform: uppercase;
       color: var(--text-muted);
@@ -332,8 +405,11 @@
       font-family: 'Oswald', sans-serif;
       font-size: 1rem;
       font-weight: 700;
-      color: var(--gold);
     }
+
+    .lb-pay-pill--venmo .lb-pay-pill-handle { color: #3D95CE; }
+    .lb-pay-pill--cashapp .lb-pay-pill-handle { color: #00D64F; }
+    .lb-pay-pill--cash .lb-pay-pill-handle { color: var(--gold); }
 
     /* ---- FOOTER ---- */
     .lb-footer {
@@ -389,7 +465,7 @@
 
   <!-- ---- LINKS ---- -->
   <div class="lb-links">
-    <a href="menu.html" class="lb-btn lb-btn--menu">
+    <a href="https://www.toasttab.com/local/order/dres-tasty-southern-cuisines-94-963-kuakahi-st" target="_blank" rel="noopener" class="lb-btn lb-btn--menu">
       <span class="lb-icon">🍽️</span> View Our Full Menu
     </a>
 
@@ -416,51 +492,35 @@
   <!-- ---- PAYMENT ---- -->
   <div class="lb-payment">
     <p class="lb-pay-title">Accepted Payment Methods</p>
-    <div class="lb-pay-badges">
-      <!-- Visa -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="Visa">
-        <rect width="56" height="36" rx="5" fill="#1A1F71"/>
-        <text x="28" y="26" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="900" font-size="17" font-style="italic" letter-spacing="1">VISA</text>
-      </svg>
-      <!-- Mastercard -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="Mastercard">
-        <rect width="56" height="36" rx="5" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
-        <circle cx="20" cy="18" r="11" fill="#EB001B" opacity="0.95"/>
-        <circle cx="36" cy="18" r="11" fill="#F79E1B" opacity="0.95"/>
-        <path d="M28 8.9a11 11 0 0 1 0 18.2A11 11 0 0 1 28 8.9z" fill="#FF5F00"/>
-      </svg>
-      <!-- Amex -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="American Express">
-        <rect width="56" height="36" rx="5" fill="#007BC1"/>
-        <text x="28" y="17" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="7.5" letter-spacing="0.3">AMERICAN</text>
-        <text x="28" y="27" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="7.5" letter-spacing="0.3">EXPRESS</text>
-      </svg>
-      <!-- Discover -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="Discover">
-        <rect width="56" height="36" rx="5" fill="white"/>
-        <text x="8" y="22" fill="#231F20" font-family="Arial,sans-serif" font-weight="bold" font-size="7" letter-spacing="0.4">DISCOVER</text>
-        <circle cx="44" cy="18" r="12" fill="#E65C00"/>
-      </svg>
-      <!-- CashApp -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="Cash App">
-        <rect width="56" height="36" rx="5" fill="#00D64F"/>
-        <text x="28" y="26" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="22">$</text>
-      </svg>
-      <!-- Venmo -->
-      <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" title="Venmo">
-        <rect width="56" height="36" rx="5" fill="#3D95CE"/>
-        <text x="28" y="24" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="11">venmo</text>
-      </svg>
+
+    <!-- Credit / Debit Cards -->
+    <div class="lb-pay-cards">
+      <span class="lb-card-chip lb-card-chip--visa">VISA</span>
+      <span class="lb-card-chip lb-card-chip--mc">
+        <span class="mc-circles"><span></span><span></span></span>
+        Mastercard
+      </span>
+      <span class="lb-card-chip lb-card-chip--amex">Amex</span>
+      <span class="lb-card-chip lb-card-chip--discover">
+        Discover <span class="disc-dot"></span>
+      </span>
     </div>
 
-    <div class="lb-pay-handles">
-      <div class="lb-pay-pill">
+    <div class="lb-pay-sep"></div>
+
+    <!-- Digital Payments -->
+    <div class="lb-pay-digital">
+      <div class="lb-pay-pill lb-pay-pill--venmo">
         <span class="lb-pay-pill-label">Venmo</span>
         <span class="lb-pay-pill-handle">@Drechef24</span>
       </div>
-      <div class="lb-pay-pill">
+      <div class="lb-pay-pill lb-pay-pill--cashapp">
         <span class="lb-pay-pill-label">Cash App</span>
         <span class="lb-pay-pill-handle">$ChelDre76</span>
+      </div>
+      <div class="lb-pay-pill lb-pay-pill--cash">
+        <span class="lb-pay-pill-label">Also</span>
+        <span class="lb-pay-pill-handle">Cash</span>
       </div>
     </div>
   </div>
@@ -470,6 +530,7 @@
     <p>© 2025 Dre's Tasty Southern Cuisines · Hawaii</p>
     <p>Cooked fresh. Served with soul. Made with aloha.</p>
     <p style="margin-top:8px"><a href="index.html">Visit our full website →</a></p>
+    <p style="margin-top:12px;font-size:.68rem;color:rgba(255,255,255,.2)">Powered by <a href="https://GorJess.co" target="_blank" rel="noopener" style="color:rgba(212,160,23,.5);text-decoration:none">GorJess.co</a></p>
   </footer>
 
 </body>
