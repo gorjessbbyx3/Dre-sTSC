@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dre's Tasty Southern Cuisines | Hawaii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Dancing+Script:wght@700&family=Oswald:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">
+      <span class="nav-logo-icon">🍴</span>
+      <span>Dre's TSC</span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#sides">Sides</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Find Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge reveal-up">Hawaii's Soul Food Spot</div>
+      <h1 class="hero-title">
+        <span class="hero-script reveal-up" style="--d:.1s">Dre's</span>
+        <span class="hero-bold reveal-up" style="--d:.25s">TASTY SOUTHERN</span>
+        <span class="hero-bold hero-bold--accent reveal-up" style="--d:.4s">CUISINES</span>
+      </h1>
+      <p class="hero-sub reveal-up" style="--d:.55s">Hickory smoke · Southern soul · Island aloha</p>
+      <div class="hero-ctas reveal-up" style="--d:.7s">
+        <a href="#menu" class="btn btn--primary">See the Menu</a>
+        <a href="#contact" class="btn btn--ghost">Find the Truck</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span>🔥 Hickory Smoke Pulled Pork Sliders</span>
+      <span>⭐ Bourbon Jerk Chicken</span>
+      <span>🥩 Steaks A La Crate</span>
+      <span>🍤 Lemon Garlic Butter Shrimp</span>
+      <span>🧀 Country Southern Jalapeño Cheese Grits</span>
+      <span>🍯 Honey Drizzle Garlic Rolls</span>
+      <span>🍋 GA Lemon Sweet Tea</span>
+      <span>🔥 Hickory Smoke Pulled Pork Sliders</span>
+      <span>⭐ Bourbon Jerk Chicken</span>
+      <span>🥩 Steaks A La Crate</span>
+      <span>🍤 Lemon Garlic Butter Shrimp</span>
+      <span>🧀 Country Southern Jalapeño Cheese Grits</span>
+      <span>🍯 Honey Drizzle Garlic Rolls</span>
+      <span>🍋 GA Lemon Sweet Tea</span>
+    </div>
+  </div>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="about" id="about">
+    <div class="about-bg-text">SOUL</div>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-frame">
+            <div class="about-img-inner">
+              <div class="chef-silhouette">
+                <svg viewBox="0 0 200 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="100" cy="60" r="45" fill="#D4A017" opacity=".15"/>
+                  <ellipse cx="100" cy="195" rx="65" ry="80" fill="#D4A017" opacity=".1"/>
+                  <!-- Chef hat -->
+                  <rect x="68" y="18" width="64" height="8" rx="4" fill="#D4A017" opacity=".6"/>
+                  <rect x="75" y="5" width="50" height="20" rx="10" fill="#D4A017" opacity=".5"/>
+                  <!-- Fork -->
+                  <line x1="140" y1="110" x2="140" y2="170" stroke="#D4A017" stroke-width="3" opacity=".7"/>
+                  <line x1="133" y1="110" x2="133" y2="130" stroke="#D4A017" stroke-width="2" opacity=".7"/>
+                  <line x1="147" y1="110" x2="147" y2="130" stroke="#D4A017" stroke-width="2" opacity=".7"/>
+                </svg>
+              </div>
+              <div class="about-glow"></div>
+            </div>
+            <div class="about-frame-corner tl"></div>
+            <div class="about-frame-corner tr"></div>
+            <div class="about-frame-corner bl"></div>
+            <div class="about-frame-corner br"></div>
+          </div>
+          <div class="about-tag">Chef Dre's</div>
+        </div>
+        <div class="about-text reveal-right">
+          <div class="section-eyebrow">The Story</div>
+          <h2 class="section-title">Born in the South.<br/><em>Made for the Islands.</em></h2>
+          <p>Chef Dre brought the soul of Southern cooking straight to the shores of Hawaii — slow-smoked meats, rich creamy sides, and flavors that hit different every single time. Every plate is cooked with intention, seasoned with love, and finished with that unmistakable Dre touch.</p>
+          <p>From hickory-smoked pulled pork sliders to bourbon-marinated jerk chicken, this is comfort food elevated — served fresh from the truck, right to your hands.</p>
+          <div class="about-stats">
+            <div class="stat"><span class="stat-num" data-target="8">0</span><span>+</span><div class="stat-label">Hour Marinade</div></div>
+            <div class="stat"><span class="stat-num" data-target="100">0</span><span>%</span><div class="stat-label">Made Fresh</div></div>
+            <div class="stat"><span class="stat-num" data-target="5">0</span><span>★</span><div class="stat-label">Star Flavor</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0d0d0d"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="menu-section" id="menu">
+    <div class="menu-fire-left"></div>
+    <div class="menu-fire-right"></div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">— What We Serve —</div>
+        <h2 class="section-title">The <em>Menu</em></h2>
+        <div class="gold-line"></div>
+      </div>
+
+      <!-- SLIDERS -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">🔥</div>
+          <h3>Hickory Smoke Pulled Pork Sliders</h3>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card" data-price="$10.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <div class="menu-card-tag">Most Popular</div>
+                <h4>3 Sliders</h4>
+                <p>Three perfectly stacked hickory smoked pulled pork sliders on Hawaiian rolls</p>
+                <div class="menu-price">$10.50</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-price="$12.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <h4>3 Sliders + Rice or Chips</h4>
+                <p>Three sliders served with your choice of rice or chips on the side</p>
+                <div class="menu-price">$12.50</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-price="$15.00">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <h4>3 Sliders + Premium Side</h4>
+                <p>Three sliders with a premium southern side of your choice</p>
+                <div class="menu-price">$15.00</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card menu-card--featured" data-price="$18.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <div class="menu-card-tag menu-card-tag--gold">Best Value</div>
+                <h4>4 Sliders Large + Drink</h4>
+                <p>Four large sliders with a premium side and your choice of drink — the full experience</p>
+                <div class="menu-price">$18.50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOURBON JERK CHICKEN -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">⭐</div>
+          <h3>Bourbon Jerk Chicken Cuisine</h3>
+        </div>
+        <div class="menu-description-card reveal-up">
+          <div class="menu-description-card-text">
+            <h4>Jerked Chicken Cutlets</h4>
+            <p>Marinated <strong>8 full hours</strong> then cooked in a delicious <strong>bourbon sweet sauce</strong>. The wait is worth every bite — deep flavor, tender meat, unforgettable finish.</p>
+          </div>
+          <div class="menu-description-card-badge">
+            <span>Ask for</span>
+            <span>Pricing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEAKS -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">🥩</div>
+          <h3>Steaks A La Crate</h3>
+        </div>
+        <div class="steak-grid">
+          <div class="steak-card reveal-up" style="--d:.1s">
+            <div class="steak-size">04–06 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$17.50</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$24.00</span></div>
+            </div>
+          </div>
+          <div class="steak-card reveal-up" style="--d:.2s">
+            <div class="steak-size">06–08 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$23.50</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$30.00</span></div>
+            </div>
+          </div>
+          <div class="steak-card steak-card--premium reveal-up" style="--d:.3s">
+            <div class="steak-badge">Premium Cut</div>
+            <div class="steak-size">10–12 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$38.00</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$45.50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHRIMP -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">🍤</div>
+          <h3>Lemon Garlic Butter Shrimp</h3>
+        </div>
+        <p class="category-sub">Extra large shrimp — cooked in rich lemon garlic butter sauce</p>
+        <div class="shrimp-grid">
+          <div class="shrimp-card reveal-up">
+            <div class="shrimp-count">8 Shrimp</div>
+            <div class="shrimp-price">$17.50</div>
+          </div>
+          <div class="shrimp-card reveal-up">
+            <div class="shrimp-count">15 Shrimp</div>
+            <div class="shrimp-price">$22.50</div>
+            <div class="shrimp-note">Meal: $28.50</div>
+          </div>
+          <div class="shrimp-card shrimp-card--xl reveal-up">
+            <div class="shrimp-badge">Double Sides</div>
+            <div class="shrimp-count">20 Shrimp</div>
+            <div class="shrimp-price">$32.50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#111"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== SIDES & DRINKS ===== -->
+  <section class="sides-section" id="sides">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">— Complete Your Plate —</div>
+        <h2 class="section-title">Sides &amp; <em>Drinks</em></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="sides-drinks-grid">
+        <div class="sides-col reveal-left">
+          <h3 class="sides-col-title">Side Southern Cuisines</h3>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Country Southern Jalapeño Cheese Grits</span>
+              <span class="side-item-price">$4.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Cheesy Garlic Smashed Potatoes</span>
+              <span class="side-item-price">$4.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Honey Drizzle Garlic Rolls</span>
+              <span class="side-item-price">3 for $4.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="sides-divider"></div>
+        <div class="drinks-col reveal-right">
+          <h3 class="sides-col-title">Drinks</h3>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">GA Lemon Sweet Tea</span>
+              <span class="side-item-price">$3.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Water</span>
+              <span class="side-item-price">$2.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Coke</span>
+              <span class="side-item-price">$2.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="delivery-notice reveal-up">
+        <div class="delivery-notice-icon">🚚</div>
+        <div>
+          <strong>Delivery Available</strong> — Delivery fees apply. Tips show appreciation for great service. <em>Mahalo!</em>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,80 1440,20 L1440,80 L0,80 Z" fill="#0a0a0a"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="gallery-section" id="gallery">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">— Fresh Off the Truck —</div>
+        <h2 class="section-title">Food That <em>Hits</em></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-item--tall reveal-up" style="--d:.1s">
+          <div class="gallery-img gallery-img--1">
+            <div class="gallery-label">Pulled Pork Sliders</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" style="--d:.2s">
+          <div class="gallery-img gallery-img--2">
+            <div class="gallery-label">Cheesy Smashed Potatoes</div>
+          </div>
+        </div>
+        <div class="gallery-item reveal-up" style="--d:.3s">
+          <div class="gallery-img gallery-img--3">
+            <div class="gallery-label">The Full Plate</div>
+          </div>
+        </div>
+        <div class="gallery-item gallery-item--wide reveal-up" style="--d:.4s">
+          <div class="gallery-img gallery-img--4">
+            <div class="gallery-label">Sliders Up Close</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,30 C720,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0d0d0d"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-bg-glow"></div>
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">— Come Get It —</div>
+        <h2 class="section-title">Find <em>Chef Dre</em></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-card reveal-up" style="--d:.1s" href="https://www.instagram.com/dres_tasty_southerncuisenes/" target="_blank" rel="noopener">
+          <div class="contact-card-icon">📸</div>
+          <h4>Instagram</h4>
+          <p>@dres_tasty_southerncuisenes</p>
+          <p class="contact-sub">DMs open — order, cater, &amp; connect with Chef Dre directly</p>
+        </a>
+        <a class="contact-card reveal-up" style="--d:.2s" href="https://www.tiktok.com/@drestastysoutherncuisine" target="_blank" rel="noopener">
+          <div class="contact-card-icon">🎵</div>
+          <h4>TikTok</h4>
+          <p>@drestastysoutherncuisine</p>
+          <p class="contact-sub">Follow for daily specials, truck location &amp; behind the scenes</p>
+        </a>
+        <a class="contact-card reveal-up" style="--d:.3s" href="https://m.yelp.com/biz/dres-tasty-southern-cuisine-urban-honolulu" target="_blank" rel="noopener">
+          <div class="contact-card-icon">⭐</div>
+          <h4>Yelp — Urban Honolulu</h4>
+          <p>Dre's Tasty Southern Cuisine</p>
+          <p class="contact-sub">Leave a review &amp; see where to find the truck in Honolulu</p>
+        </a>
+      </div>
+      <div class="payment-row reveal-up">
+        <div class="payment-pill">
+          <span class="payment-label">Venmo</span>
+          <span class="payment-handle">@Drechef24</span>
+        </div>
+        <div class="payment-pill">
+          <span class="payment-label">Cash App</span>
+          <span class="payment-handle">$ChelDre76</span>
+        </div>
+      </div>
+
+      <div class="contact-bottom reveal-up">
+        <div class="contact-bird-of-paradise">✿</div>
+        <p class="contact-mahalo">Mahalo for your support — every plate is made with aloha.</p>
+        <p class="contact-note">Delivery fees apply · Tips are always appreciated</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span class="footer-script">Dre's</span>
+      <span class="footer-text">TASTY SOUTHERN CUISINES</span>
+    </div>
+    <p class="footer-copy">© 2025 Dre's Tasty Southern Cuisines · Hawaii · All Rights Reserved</p>
+    <p class="footer-sub">Cooked fresh. Served with soul. Made with aloha.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
