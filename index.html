@@ -11,6 +11,30 @@
 </head>
 <body>
 
+  <!-- ===== LOADER ===== -->
+  <div id="loader" class="loader">
+    <div class="loader-smoke"></div>
+    <div class="loader-smoke loader-smoke--2"></div>
+    <div class="loader-smoke loader-smoke--3"></div>
+    <div class="loader-inner">
+      <div class="loader-logo">
+        <span class="loader-script">Dre's</span>
+        <span class="loader-subtitle">TASTY SOUTHERN CUISINES</span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar"><div class="loader-fill" id="loaderFill"></div></div>
+      </div>
+      <p class="loader-tagline" id="loaderTagline">Loading something delicious…</p>
+    </div>
+    <div class="loader-corner loader-corner--tl"></div>
+    <div class="loader-corner loader-corner--tr"></div>
+    <div class="loader-corner loader-corner--bl"></div>
+    <div class="loader-corner loader-corner--br"></div>
+  </div>
+
+  <!-- CURSOR TRAIL CANVAS -->
+  <canvas id="trailCanvas" class="trail-canvas"></canvas>
+
   <!-- CUSTOM CURSOR -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-follower" id="cursor-follower"></div>
@@ -41,14 +65,14 @@
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-      <div class="hero-badge reveal-up">Hawaii's Soul Food Spot</div>
+      <div class="hero-badge" id="heroBadge">Hawaii's Soul Food Spot</div>
       <h1 class="hero-title">
-        <span class="hero-script reveal-up" style="--d:.1s">Dre's</span>
-        <span class="hero-bold reveal-up" style="--d:.25s">TASTY SOUTHERN</span>
-        <span class="hero-bold hero-bold--accent reveal-up" style="--d:.4s">CUISINES</span>
+        <span class="hero-script" id="heroScript">Dre's</span>
+        <span class="hero-bold split-text" id="heroLine1">TASTY SOUTHERN</span>
+        <span class="hero-bold hero-bold--accent split-text" id="heroLine2">CUISINES</span>
       </h1>
-      <p class="hero-sub reveal-up" style="--d:.55s">Hickory smoke · Southern soul · Island aloha</p>
-      <div class="hero-ctas reveal-up" style="--d:.7s">
+      <p class="hero-sub" id="heroSub"></p>
+      <div class="hero-ctas" id="heroCtas">
         <a href="#menu" class="btn btn--primary">See the Menu</a>
         <a href="#contact" class="btn btn--ghost">Find the Truck</a>
       </div>
@@ -59,6 +83,16 @@
       <div class="hero-scroll-line"></div>
     </div>
   </section>
+
+  <!-- SECTION DOTS NAV -->
+  <div class="section-counter" id="sectionCounter">
+    <div class="section-dot active" data-target="#hero"></div>
+    <div class="section-dot" data-target="#about"></div>
+    <div class="section-dot" data-target="#menu"></div>
+    <div class="section-dot" data-target="#sides"></div>
+    <div class="section-dot" data-target="#gallery"></div>
+    <div class="section-dot" data-target="#contact"></div>
+  </div>
 
   <!-- ===== TICKER ===== -->
   <div class="ticker-wrap">
@@ -141,6 +175,15 @@
 
       <!-- SLIDERS -->
       <div class="menu-category reveal-up">
+        <div class="category-flame">
+          <div class="flame-group">
+            <div class="flame flame--1"></div>
+            <div class="flame flame--2"></div>
+            <div class="flame flame--3"></div>
+            <div class="flame flame--4"></div>
+            <div class="flame flame--5"></div>
+          </div>
+        </div>
         <div class="category-header">
           <div class="category-icon">🔥</div>
           <h3>Hickory Smoke Pulled Pork Sliders</h3>
