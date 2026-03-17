@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Dre's Tasty Southern Cuisines</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Dancing+Script:wght@700&family=Oswald:wght@300;400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- CURSOR TRAIL CANVAS -->
+  <canvas id="trailCanvas" class="trail-canvas"></canvas>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursor-follower"></div>
+
+  <!-- SCROLL PROGRESS -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.png" alt="Dre's TSC Logo" class="nav-logo-img" />
+      <span>Dre's TSC</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#sides">Sides</a></li>
+      <li><a href="index.html#contact">Find Us</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO BANNER -->
+  <div class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-content">
+      <div class="section-eyebrow">— What We Serve —</div>
+      <h1 class="page-hero-title">The <em>Menu</em></h1>
+      <p class="page-hero-sub">Hickory smoke &middot; Southern soul &middot; Island aloha</p>
+    </div>
+  </div>
+
+  <!-- ===== MENU ===== -->
+  <section class="menu-section" id="menu">
+    <div class="menu-fire-left"></div>
+    <div class="menu-fire-right"></div>
+    <div class="container">
+
+      <!-- SLIDERS -->
+      <div class="menu-category reveal-up">
+        <div class="category-flame">
+          <div class="flame-group">
+            <div class="flame flame--1"></div>
+            <div class="flame flame--2"></div>
+            <div class="flame flame--3"></div>
+            <div class="flame flame--4"></div>
+            <div class="flame flame--5"></div>
+          </div>
+        </div>
+        <div class="category-header">
+          <div class="category-icon">🔥</div>
+          <h3>Hickory Smoke Pulled Pork Sliders</h3>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card" data-price="$10.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <div class="menu-card-tag">Most Popular</div>
+                <h4>3 Sliders</h4>
+                <p>Three perfectly stacked hickory smoked pulled pork sliders on Hawaiian rolls</p>
+                <div class="menu-price">$10.50</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-price="$12.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <h4>3 Sliders + Rice or Chips</h4>
+                <p>Three sliders served with your choice of rice or chips on the side</p>
+                <div class="menu-price">$12.50</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card" data-price="$15.00">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <h4>3 Sliders + Premium Side</h4>
+                <p>Three sliders with a premium southern side of your choice</p>
+                <div class="menu-price">$15.00</div>
+              </div>
+            </div>
+          </div>
+          <div class="menu-card menu-card--featured" data-price="$18.50">
+            <div class="menu-card-inner">
+              <div class="menu-card-front">
+                <div class="menu-card-shine"></div>
+                <div class="menu-card-tag menu-card-tag--gold">Best Value</div>
+                <h4>4 Sliders Large + Drink</h4>
+                <p>Four large sliders with a premium side and your choice of drink — the full experience</p>
+                <div class="menu-price">$18.50</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BOURBON JERK CHICKEN -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">⭐</div>
+          <h3>Bourbon Jerk Chicken Cuisine</h3>
+        </div>
+        <div class="menu-description-card reveal-up">
+          <div class="menu-description-card-text">
+            <h4>Jerked Chicken Cutlets</h4>
+            <p>Marinated <strong>8 full hours</strong> then cooked in a delicious <strong>bourbon sweet sauce</strong>. The wait is worth every bite — deep flavor, tender meat, unforgettable finish.</p>
+          </div>
+          <div class="menu-description-card-badge">
+            <span>Ask for</span>
+            <span>Pricing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEAKS -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">🥩</div>
+          <h3>Steaks A La Crate</h3>
+        </div>
+        <div class="steak-grid">
+          <div class="steak-card reveal-up" style="--d:.1s">
+            <div class="steak-size">04–06 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$17.50</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$24.00</span></div>
+            </div>
+          </div>
+          <div class="steak-card reveal-up" style="--d:.2s">
+            <div class="steak-size">06–08 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$23.50</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$30.00</span></div>
+            </div>
+          </div>
+          <div class="steak-card steak-card--premium reveal-up" style="--d:.3s">
+            <div class="steak-badge">Premium Cut</div>
+            <div class="steak-size">10–12 oz</div>
+            <div class="steak-prices">
+              <div class="steak-price-row"><span>Steak</span><span class="price">$38.00</span></div>
+              <div class="steak-price-row"><span>Meal</span><span class="price">$45.50</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHRIMP -->
+      <div class="menu-category reveal-up">
+        <div class="category-header">
+          <div class="category-icon">🍤</div>
+          <h3>Lemon Garlic Butter Shrimp</h3>
+        </div>
+        <p class="category-sub">Extra large shrimp — cooked in rich lemon garlic butter sauce</p>
+        <div class="shrimp-grid">
+          <div class="shrimp-card reveal-up">
+            <div class="shrimp-count">8 Shrimp</div>
+            <div class="shrimp-price">$17.50</div>
+          </div>
+          <div class="shrimp-card reveal-up">
+            <div class="shrimp-count">15 Shrimp</div>
+            <div class="shrimp-price">$22.50</div>
+            <div class="shrimp-note">Meal: $28.50</div>
+          </div>
+          <div class="shrimp-card shrimp-card--xl reveal-up">
+            <div class="shrimp-badge">Double Sides</div>
+            <div class="shrimp-count">20 Shrimp</div>
+            <div class="shrimp-price">$32.50</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,20 C480,80 960,0 1440,50 L1440,80 L0,80 Z" fill="#111"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== SIDES & DRINKS ===== -->
+  <section class="sides-section" id="sides">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <div class="section-eyebrow">— Complete Your Plate —</div>
+        <h2 class="section-title">Sides &amp; <em>Drinks</em></h2>
+        <div class="gold-line"></div>
+      </div>
+      <div class="sides-drinks-grid">
+        <div class="sides-col reveal-left">
+          <h3 class="sides-col-title">Side Southern Cuisines</h3>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Country Southern Jalapeño Cheese Grits</span>
+              <span class="side-item-price">$4.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Cheesy Garlic Smashed Potatoes</span>
+              <span class="side-item-price">$4.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Honey Drizzle Garlic Rolls</span>
+              <span class="side-item-price">3 for $4.00</span>
+            </div>
+          </div>
+        </div>
+        <div class="sides-divider"></div>
+        <div class="drinks-col reveal-right">
+          <h3 class="sides-col-title">Drinks</h3>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">GA Lemon Sweet Tea</span>
+              <span class="side-item-price">$3.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Water</span>
+              <span class="side-item-price">$2.00</span>
+            </div>
+          </div>
+          <div class="side-item">
+            <div class="side-item-dot side-item-dot--drink"></div>
+            <div class="side-item-info">
+              <span class="side-item-name">Coke</span>
+              <span class="side-item-price">$2.50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="delivery-notice reveal-up">
+        <div class="delivery-notice-icon">🚚</div>
+        <div>
+          <strong>Delivery Available</strong> — Delivery fees apply. Tips show appreciation for great service. <em>Mahalo!</em>
+        </div>
+      </div>
+    </div>
+    <div class="wave-divider wave-divider--bottom">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none"><path d="M0,60 C360,0 1080,80 1440,20 L1440,80 L0,80 Z" fill="#0a0a0a"/></svg>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENT ===== -->
+  <section class="menu-payment-section">
+    <div class="container">
+      <div class="accepted-payments reveal-up">
+        <p class="accepted-label">Accepted Payment Methods</p>
+        <div class="payment-badges-row">
+          <!-- Visa -->
+          <div class="pay-badge" title="Visa">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="#1A1F71"/>
+              <text x="28" y="26" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="900" font-size="17" font-style="italic" letter-spacing="1">VISA</text>
+            </svg>
+          </div>
+          <!-- Mastercard -->
+          <div class="pay-badge" title="Mastercard">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="#1a1a1a" stroke="#333" stroke-width="1"/>
+              <circle cx="20" cy="18" r="11" fill="#EB001B" opacity="0.95"/>
+              <circle cx="36" cy="18" r="11" fill="#F79E1B" opacity="0.95"/>
+              <path d="M28 8.9a11 11 0 0 1 0 18.2A11 11 0 0 1 28 8.9z" fill="#FF5F00"/>
+            </svg>
+          </div>
+          <!-- Amex -->
+          <div class="pay-badge" title="American Express">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="#007BC1"/>
+              <text x="28" y="17" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="7.5" letter-spacing="0.3">AMERICAN</text>
+              <text x="28" y="27" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="7.5" letter-spacing="0.3">EXPRESS</text>
+            </svg>
+          </div>
+          <!-- Discover -->
+          <div class="pay-badge" title="Discover">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="white"/>
+              <text x="8" y="22" fill="#231F20" font-family="Arial,sans-serif" font-weight="bold" font-size="7" letter-spacing="0.4">DISCOVER</text>
+              <circle cx="44" cy="18" r="12" fill="#E65C00"/>
+            </svg>
+          </div>
+          <!-- CashApp -->
+          <div class="pay-badge" title="Cash App — $ChelDre76">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="#00D64F"/>
+              <text x="28" y="26" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="22">$</text>
+            </svg>
+          </div>
+          <!-- Venmo -->
+          <div class="pay-badge" title="Venmo — @Drechef24">
+            <svg width="56" height="36" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg">
+              <rect width="56" height="36" rx="5" fill="#3D95CE"/>
+              <text x="28" y="24" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-weight="bold" font-size="11">venmo</text>
+            </svg>
+          </div>
+        </div>
+        <div class="payment-row" style="margin-top:24px; margin-bottom:0">
+          <div class="payment-pill">
+            <span class="payment-label">Venmo</span>
+            <span class="payment-handle">@Drechef24</span>
+          </div>
+          <div class="payment-pill">
+            <span class="payment-label">Cash App</span>
+            <span class="payment-handle">$ChelDre76</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <img src="logo.png" alt="Dre's Tasty Southern Cuisines" class="footer-logo-img" />
+      <div class="footer-logo-text">
+        <span class="footer-script">Dre's</span>
+        <span class="footer-text">TASTY SOUTHERN CUISINES</span>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Dre's Tasty Southern Cuisines · Hawaii · All Rights Reserved</p>
+    <p class="footer-sub">Cooked fresh. Served with soul. Made with aloha.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

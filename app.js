@@ -10,6 +10,7 @@
    ───────────────────────────────────────────── */
 (function initLoader() {
   const loader = document.getElementById("loader");
+  if (!loader) return;
   const fill   = document.getElementById("loaderFill");
   const tag    = document.getElementById("loaderTagline");
 
@@ -249,6 +250,7 @@ navLinks.querySelectorAll("a").forEach(a => {
    ───────────────────────────────────────────── */
 (function initHeroCanvas() {
   const canvas = document.getElementById("heroCanvas");
+  if (!canvas) return;
   const ctx    = canvas.getContext("2d");
 
   function resize() {
@@ -553,18 +555,20 @@ document.querySelectorAll(".stat-num").forEach(el => counterObserver.observe(el)
    PARALLAX HERO
    ───────────────────────────────────────────── */
 const heroContent = document.querySelector(".hero-content");
-window.addEventListener("scroll", () => {
-  if (window.scrollY < window.innerHeight) {
-    const o = window.scrollY;
-    heroContent.style.transform = `translateY(${o * 0.3}px)`;
-    heroContent.style.opacity   = Math.max(0, 1 - o / (window.innerHeight * 0.7));
-  }
-}, { passive: true });
+if (heroContent) {
+  window.addEventListener("scroll", () => {
+    if (window.scrollY < window.innerHeight) {
+      const o = window.scrollY;
+      heroContent.style.transform = `translateY(${o * 0.3}px)`;
+      heroContent.style.opacity   = Math.max(0, 1 - o / (window.innerHeight * 0.7));
+    }
+  }, { passive: true });
+}
 
 /* ─────────────────────────────────────────────
    SECTION DOT NAV
    ───────────────────────────────────────────── */
-const sectionIds  = ["hero", "about", "menu", "sides", "gallery", "contact"];
+const sectionIds  = ["hero", "about", "gallery", "contact"];
 const sectionDots = document.querySelectorAll(".section-dot");
 
 sectionDots.forEach((dot, i) => {
@@ -639,7 +643,8 @@ window.addEventListener("scroll", () => {
     if (window.scrollY >= s.offsetTop - 200) current = s.id;
   });
   navLinkEls.forEach(a => {
-    a.style.color = a.getAttribute("href") === `#${current}` ? "var(--gold)" : "";
+    const href = a.getAttribute("href");
+    a.style.color = href === `#${current}` ? "var(--gold)" : "";
   });
 }, { passive: true });
 
