@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 420" width="400" height="420">
+  <defs>
+    <!-- Main circle gradient: yellow-orange center → deep red-orange edge -->
+    <radialGradient id="bgGrad" cx="50%" cy="42%" r="52%">
+      <stop offset="0%"   stop-color="#FFD84D"/>
+      <stop offset="40%"  stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#CC2200"/>
+    </radialGradient>
+    <!-- Gold gradient for "Tasty" script -->
+    <linearGradient id="tastyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE066"/>
+      <stop offset="50%"  stop-color="#FFB800"/>
+      <stop offset="100%" stop-color="#E07800"/>
+    </linearGradient>
+    <!-- Banner gradient -->
+    <linearGradient id="bannerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FF8C00"/>
+      <stop offset="100%" stop-color="#CC4400"/>
+    </linearGradient>
+    <!-- Dre's text gradient -->
+    <linearGradient id="dresGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#FFE066"/>
+      <stop offset="100%" stop-color="#FF7700"/>
+    </linearGradient>
+    <!-- Drop shadow filter -->
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="rgba(0,0,0,0.5)"/>
+    </filter>
+    <filter id="shadowStrong" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="rgba(0,0,0,0.7)"/>
+    </filter>
+    <!-- Clip circle -->
+    <clipPath id="circleClip">
+      <circle cx="200" cy="195" r="176"/>
+    </clipPath>
+  </defs>
+
+  <!-- ── OUTER RING (black border) ── -->
+  <circle cx="200" cy="195" r="192" fill="#111" />
+  <!-- Orange border ring -->
+  <circle cx="200" cy="195" r="185" fill="#CC4400" />
+  <!-- Main circle fill -->
+  <circle cx="200" cy="195" r="176" fill="url(#bgGrad)" />
+
+  <!-- ── SPATULA (left, angled ↗) ── -->
+  <g clip-path="url(#circleClip)">
+    <g transform="translate(200,195) rotate(-38) translate(-200,-195)">
+      <!-- Handle -->
+      <rect x="60" y="155" width="16" height="120" rx="6" fill="#111" stroke="#333" stroke-width="1"/>
+      <!-- Neck -->
+      <rect x="63" y="130" width="10" height="30" rx="3" fill="#1a1a1a"/>
+      <!-- Head -->
+      <rect x="48" y="90" width="40" height="44" rx="4" fill="#111"/>
+      <!-- Slots in spatula head -->
+      <rect x="55" y="97" width="6" height="28" rx="2" fill="#FF8C00" opacity="0.6"/>
+      <rect x="65" y="97" width="6" height="28" rx="2" fill="#FF8C00" opacity="0.6"/>
+      <rect x="75" y="97" width="6" height="28" rx="2" fill="#FF8C00" opacity="0.6"/>
+    </g>
+
+    <!-- ── FORK (right, angled ↖) ── -->
+    <g transform="translate(200,195) rotate(38) translate(-200,-195)">
+      <!-- Handle -->
+      <rect x="324" y="155" width="16" height="120" rx="6" fill="#111" stroke="#333" stroke-width="1"/>
+      <!-- Neck -->
+      <rect x="327" y="115" width="10" height="45" rx="3" fill="#1a1a1a"/>
+      <!-- Tines -->
+      <rect x="312" y="75" width="5" height="45" rx="2.5" fill="#111"/>
+      <rect x="321" y="72" width="5" height="48" rx="2.5" fill="#111"/>
+      <rect x="330" y="72" width="5" height="48" rx="2.5" fill="#111"/>
+      <rect x="339" y="75" width="5" height="45" rx="2.5" fill="#111"/>
+    </g>
+
+    <!-- ── CHEF SILHOUETTE ── -->
+    <!-- Body/shoulders -->
+    <ellipse cx="200" cy="310" rx="100" ry="70" fill="#0a0a0a"/>
+    <!-- Neck -->
+    <rect x="185" y="195" width="30" height="40" rx="8" fill="#0a0a0a"/>
+    <!-- Head silhouette (facing left) -->
+    <ellipse cx="195" cy="175" rx="50" ry="55" fill="#0a0a0a"/>
+    <!-- Baseball cap brim (pointing right/forward, worn backwards-ish) -->
+    <!-- Cap dome -->
+    <ellipse cx="195" cy="135" rx="52" ry="28" fill="#0a0a0a"/>
+    <!-- Cap brim (extending right) -->
+    <path d="M230,135 Q260,130 265,145 Q245,148 215,142 Z" fill="#0a0a0a"/>
+    <!-- Face curve / jaw -->
+    <path d="M155,175 Q152,210 168,225 Q185,238 200,235 Q218,230 228,215 Q238,198 235,178" fill="#0a0a0a"/>
+  </g>
+
+  <!-- ── "DRE'S" TEXT ── -->
+  <text
+    x="200" y="80"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="62"
+    font-weight="900"
+    text-anchor="middle"
+    letter-spacing="2"
+    fill="url(#dresGrad)"
+    stroke="#1a0a00"
+    stroke-width="6"
+    paint-order="stroke fill"
+    filter="url(#shadow)"
+  >DRE'S</text>
+  <!-- White inner outline on DRE'S -->
+  <text
+    x="200" y="80"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="62"
+    font-weight="900"
+    text-anchor="middle"
+    letter-spacing="2"
+    fill="none"
+    stroke="rgba(255,255,255,0.35)"
+    stroke-width="2"
+  >DRE'S</text>
+
+  <!-- ── "Tasty" SCRIPT ── -->
+  <text
+    x="200" y="265"
+    font-family="Dancing Script, Brush Script MT, cursive"
+    font-size="82"
+    font-weight="700"
+    text-anchor="middle"
+    fill="url(#tastyGrad)"
+    stroke="#7a3a00"
+    stroke-width="5"
+    paint-order="stroke fill"
+    filter="url(#shadowStrong)"
+  >Tasty</text>
+
+  <!-- ── BANNER ── -->
+  <!-- Banner left wing -->
+  <path d="M22,310 L52,295 L360,295 L388,310 L360,330 L52,330 Z" fill="url(#bannerGrad)" stroke="#111" stroke-width="3"/>
+  <!-- Banner left flap -->
+  <path d="M22,310 L52,295 L52,330 L30,340 Z" fill="#AA3300"/>
+  <!-- Banner right flap -->
+  <path d="M388,310 L360,295 L360,330 L380,340 Z" fill="#AA3300"/>
+
+  <!-- ── "SOUTHERN CUISINE" TEXT ── -->
+  <text
+    x="203" y="322"
+    font-family="Arial Black, Impact, sans-serif"
+    font-size="24"
+    font-weight="900"
+    text-anchor="middle"
+    letter-spacing="2"
+    fill="#FFFFFF"
+    stroke="#111"
+    stroke-width="3"
+    paint-order="stroke fill"
+  >SOUTHERN CUISINE</text>
+
+  <!-- ── BOTTOM DIAMOND ORNAMENT ── -->
+  <g transform="translate(200, 375)">
+    <!-- Outer diamond -->
+    <polygon points="0,-22 20,0 0,22 -20,0" fill="#CC4400" stroke="#111" stroke-width="2"/>
+    <!-- Inner diamond -->
+    <polygon points="0,-12 10,0 0,12 -10,0" fill="#FF8C00"/>
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="4" fill="#FFD84D"/>
+  </g>
+</svg>
