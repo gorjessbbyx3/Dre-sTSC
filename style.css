@@ -433,8 +433,11 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   max-width: 340px;
   height: auto;
   object-fit: contain;
+  border-radius: 50%;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 0 60px rgba(255,140,0,.45), 0 0 120px rgba(255,140,0,.15);
   animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 8px 40px rgba(255,140,0,.35));
 }
 .about-glow {
   position: absolute;
