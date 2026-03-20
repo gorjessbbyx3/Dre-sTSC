@@ -391,19 +391,152 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   background: var(--smoke);
   overflow: hidden;
 }
-.about-bg-text {
+/* ---------- ABOUT GRILL BACKGROUND ---------- */
+.about-grill {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: var(--font-head);
-  font-size: clamp(8rem, 20vw, 18rem);
-  font-weight: 700;
-  color: rgba(212,160,23,.03);
-  letter-spacing: .1em;
+  width: clamp(260px, 44vw, 520px);
+  height: clamp(300px, 52vw, 600px);
   pointer-events: none;
   user-select: none;
-  white-space: nowrap;
+  z-index: 0;
+}
+
+.ag-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ---- Flames: rise from grate level (≈50% down the container) ---- */
+.ag-flames {
+  position: absolute;
+  /* base sits at the grate line (~49% down from top = 51% up from bottom) */
+  bottom: 49%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 54%;
+  height: clamp(70px, 16vw, 185px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(2px, 0.5vw, 7px);
+}
+
+.ag-flame {
+  flex-shrink: 0;
+  border-radius: 50% 50% 30% 30% / 60% 60% 40% 40%;
+  transform-origin: center bottom;
+  filter: blur(1.5px);
+}
+
+/* outer-left */
+.ag-flame--1 {
+  width: clamp(5px,1.1vw,13px);
+  height: clamp(18px,3.6vw,42px);
+  background: linear-gradient(to top,rgba(255,69,0,.13),rgba(255,140,0,.09),rgba(255,215,0,.05));
+  animation: agF1 .92s ease-in-out infinite alternate;
+}
+.ag-flame--2 {
+  width: clamp(7px,1.5vw,17px);
+  height: clamp(28px,5.5vw,62px);
+  background: linear-gradient(to top,rgba(255,34,0,.15),rgba(255,100,0,.11),rgba(255,168,0,.06));
+  animation: agF2 .76s ease-in-out infinite alternate;
+}
+.ag-flame--3 {
+  width: clamp(9px,1.8vw,21px);
+  height: clamp(36px,7.2vw,80px);
+  background: linear-gradient(to top,rgba(218,30,0,.16),rgba(255,65,0,.13),rgba(255,150,0,.07));
+  animation: agF3 .84s ease-in-out infinite alternate;
+}
+.ag-flame--4 {
+  width: clamp(11px,2.2vw,26px);
+  height: clamp(46px,9.2vw,103px);
+  background: linear-gradient(to top,rgba(200,16,0,.18),rgba(255,48,0,.14),rgba(255,132,0,.08));
+  animation: agF1 1.07s ease-in-out infinite alternate;
+}
+/* center-peak tallest */
+.ag-flame--5 {
+  width: clamp(13px,2.6vw,30px);
+  height: clamp(54px,10.8vw,122px);
+  background: linear-gradient(to top,rgba(210,18,0,.20),rgba(255,55,0,.16),rgba(255,138,0,.09));
+  animation: agF2 .70s ease-in-out infinite alternate;
+  filter: blur(1px);
+}
+.ag-flame--6 {
+  width: clamp(11px,2.2vw,26px);
+  height: clamp(46px,9.2vw,103px);
+  background: linear-gradient(to top,rgba(200,16,0,.18),rgba(255,48,0,.14),rgba(255,132,0,.08));
+  animation: agF3 1.14s ease-in-out infinite alternate;
+}
+.ag-flame--7 {
+  width: clamp(9px,1.8vw,21px);
+  height: clamp(36px,7.2vw,80px);
+  background: linear-gradient(to top,rgba(218,30,0,.16),rgba(255,65,0,.13),rgba(255,150,0,.07));
+  animation: agF1 .88s ease-in-out infinite alternate;
+}
+.ag-flame--8 {
+  width: clamp(7px,1.5vw,17px);
+  height: clamp(28px,5.5vw,62px);
+  background: linear-gradient(to top,rgba(255,34,0,.15),rgba(255,100,0,.11),rgba(255,168,0,.06));
+  animation: agF2 .73s ease-in-out infinite alternate;
+}
+/* outer-right */
+.ag-flame--9 {
+  width: clamp(5px,1.1vw,13px);
+  height: clamp(18px,3.6vw,42px);
+  background: linear-gradient(to top,rgba(255,69,0,.13),rgba(255,140,0,.09),rgba(255,215,0,.05));
+  animation: agF3 .97s ease-in-out infinite alternate;
+}
+
+/* ---- Smoke wisps: start at grate level, drift up ---- */
+.ag-smokes {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 72%;
+  height: clamp(110px, 22vw, 250px);
+  pointer-events: none;
+}
+
+.ag-smoke {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  filter: blur(10px);
+  opacity: 0;
+  animation: agSmokeUp linear infinite;
+}
+
+.ag-smoke--1 { width: 26px; height: 54px; left: 28%; background: radial-gradient(ellipse,rgba(180,150,100,.07),transparent 70%); animation-duration: 3.9s; animation-delay: 0s; }
+.ag-smoke--2 { width: 20px; height: 44px; left: 43%; background: radial-gradient(ellipse,rgba(160,130,90,.06),transparent 70%); animation-duration: 4.5s; animation-delay: -1.3s; }
+.ag-smoke--3 { width: 16px; height: 38px; left: 56%; background: radial-gradient(ellipse,rgba(140,118,78,.06),transparent 70%); animation-duration: 3.3s; animation-delay: -2.5s; }
+.ag-smoke--4 { width: 30px; height: 60px; left: 16%; background: radial-gradient(ellipse,rgba(180,150,100,.08),transparent 70%); animation-duration: 4.9s; animation-delay: -0.7s; }
+.ag-smoke--5 { width: 18px; height: 42px; left: 66%; background: radial-gradient(ellipse,rgba(160,130,90,.06),transparent 70%); animation-duration: 3.7s; animation-delay: -1.9s; }
+.ag-smoke--6 { width: 34px; height: 68px; left: 38%; background: radial-gradient(ellipse,rgba(180,150,100,.07),transparent 70%); animation-duration: 5.1s; animation-delay: -3.3s; }
+
+/* ---- Grill flame keyframes ---- */
+@keyframes agF1 {
+  0%   { transform: scaleX(.87) scaleY(.93) rotate(-2.5deg); }
+  100% { transform: scaleX(1.13) scaleY(1.07) rotate(2.5deg); }
+}
+@keyframes agF2 {
+  0%   { transform: scaleX(1.03) scaleY(.96) rotate(1.5deg); }
+  100% { transform: scaleX(.83) scaleY(1.13) rotate(-1.5deg); }
+}
+@keyframes agF3 {
+  0%   { transform: scaleX(.92) scaleY(1.03) rotate(.5deg); }
+  100% { transform: scaleX(1.08) scaleY(.95) rotate(-2.5deg); }
+}
+@keyframes agSmokeUp {
+  0%   { transform: translateY(0) scaleX(1); opacity: 0; }
+  14%  { opacity: 1; }
+  84%  { opacity: .25; }
+  100% { transform: translateY(-230px) scaleX(3.8); opacity: 0; }
 }
 .about-grid {
   display: grid;

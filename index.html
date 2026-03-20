@@ -172,7 +172,88 @@
 
   <!-- ===== ABOUT ===== -->
   <section class="about" id="about">
-    <div class="about-bg-text">SOUL</div>
+    <!-- Animated grill background -->
+    <div class="about-grill" aria-hidden="true">
+      <div class="ag-smokes">
+        <span class="ag-smoke ag-smoke--1"></span>
+        <span class="ag-smoke ag-smoke--2"></span>
+        <span class="ag-smoke ag-smoke--3"></span>
+        <span class="ag-smoke ag-smoke--4"></span>
+        <span class="ag-smoke ag-smoke--5"></span>
+        <span class="ag-smoke ag-smoke--6"></span>
+      </div>
+      <div class="ag-flames">
+        <span class="ag-flame ag-flame--1"></span>
+        <span class="ag-flame ag-flame--2"></span>
+        <span class="ag-flame ag-flame--3"></span>
+        <span class="ag-flame ag-flame--4"></span>
+        <span class="ag-flame ag-flame--5"></span>
+        <span class="ag-flame ag-flame--6"></span>
+        <span class="ag-flame ag-flame--7"></span>
+        <span class="ag-flame ag-flame--8"></span>
+        <span class="ag-flame ag-flame--9"></span>
+      </div>
+      <svg class="ag-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 390" fill="none">
+        <!-- Lid top dome -->
+        <path d="M58,192 Q58,78 180,78 Q302,78 302,192 Z"
+              fill="rgba(212,160,23,0.04)" stroke="rgba(212,160,23,0.13)" stroke-width="2"/>
+        <!-- Lid vent knob -->
+        <rect x="169" y="76" width="22" height="11" rx="5"
+              fill="rgba(212,160,23,0.07)" stroke="rgba(212,160,23,0.18)" stroke-width="1.5"/>
+        <!-- Lid handle arc -->
+        <path d="M132,106 Q180,88 228,106"
+              stroke="rgba(212,160,23,0.14)" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- Bowl bottom half -->
+        <path d="M58,192 Q58,296 180,296 Q302,296 302,192 Z"
+              fill="rgba(25,15,5,0.07)" stroke="rgba(212,160,23,0.13)" stroke-width="2"/>
+        <!-- Rim dividing line -->
+        <line x1="58" y1="192" x2="302" y2="192"
+              stroke="rgba(212,160,23,0.18)" stroke-width="2.5"/>
+        <!-- Grill grates — horizontal bars -->
+        <g stroke="rgba(212,160,23,0.20)" stroke-width="3.5" stroke-linecap="round">
+          <line x1="76"  y1="190" x2="284" y2="190"/>
+          <line x1="70"  y1="203" x2="290" y2="203"/>
+          <line x1="68"  y1="216" x2="292" y2="216"/>
+          <line x1="70"  y1="229" x2="290" y2="229"/>
+        </g>
+        <!-- Grill grates — vertical bars -->
+        <g stroke="rgba(212,160,23,0.13)" stroke-width="2.5" stroke-linecap="round">
+          <line x1="98"  y1="184" x2="98"  y2="237"/>
+          <line x1="118" y1="181" x2="118" y2="241"/>
+          <line x1="138" y1="179" x2="138" y2="243"/>
+          <line x1="158" y1="178" x2="158" y2="244"/>
+          <line x1="178" y1="178" x2="178" y2="244"/>
+          <line x1="198" y1="179" x2="198" y2="243"/>
+          <line x1="218" y1="181" x2="218" y2="241"/>
+          <line x1="238" y1="184" x2="238" y2="237"/>
+          <line x1="256" y1="188" x2="256" y2="232"/>
+        </g>
+        <!-- Steak silhouette on grates -->
+        <path d="M92,197 Q104,185 148,182 Q188,180 218,184 Q252,188 262,198 Q266,210 258,221 Q242,233 196,234 Q154,235 116,230 Q87,221 87,209 Q87,202 92,197 Z"
+              fill="rgba(130,45,10,0.09)" stroke="rgba(190,90,25,0.20)" stroke-width="2.5"/>
+        <!-- Steak sear marks -->
+        <g stroke="rgba(45,18,5,0.17)" stroke-width="3" stroke-linecap="round">
+          <line x1="118" y1="186" x2="112" y2="228"/>
+          <line x1="138" y1="184" x2="132" y2="231"/>
+          <line x1="158" y1="183" x2="152" y2="233"/>
+          <line x1="178" y1="183" x2="172" y2="232"/>
+          <line x1="198" y1="184" x2="193" y2="229"/>
+          <line x1="218" y1="187" x2="213" y2="225"/>
+          <line x1="236" y1="191" x2="232" y2="220"/>
+        </g>
+        <!-- Legs -->
+        <g stroke="rgba(212,160,23,0.13)" stroke-width="8" stroke-linecap="round">
+          <line x1="128" y1="290" x2="104" y2="375"/>
+          <line x1="232" y1="290" x2="256" y2="375"/>
+        </g>
+        <!-- Bottom shelf / brace -->
+        <line x1="104" y1="348" x2="256" y2="348"
+              stroke="rgba(212,160,23,0.11)" stroke-width="5" stroke-linecap="round"/>
+        <!-- Ash catcher bottom -->
+        <ellipse cx="180" cy="374" rx="48" ry="11"
+                 fill="rgba(20,12,4,0.06)" stroke="rgba(212,160,23,0.11)" stroke-width="1.5"/>
+      </svg>
+    </div>
     <div class="container">
       <div class="about-grid">
         <div class="about-img-wrap reveal-left">
