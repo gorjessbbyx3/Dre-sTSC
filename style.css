@@ -397,8 +397,9 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: clamp(260px, 44vw, 520px);
-  height: clamp(300px, 52vw, 600px);
+  /* zoomed-in viewBox is 304×185, aspect ≈ 1.643 */
+  width: clamp(500px, 86vw, 1120px);
+  height: clamp(305px, 52.4vw, 682px);
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -411,15 +412,15 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   height: 100%;
 }
 
-/* ---- Flames: rise from grate level (≈50% down the container) ---- */
+/* ---- Flames: rise from grate level ---- */
+/* viewBox crop puts grate top (y=190) at 81% from bottom */
 .ag-flames {
   position: absolute;
-  /* base sits at the grate line (~49% down from top = 51% up from bottom) */
-  bottom: 49%;
+  bottom: 79%;
   left: 50%;
   transform: translateX(-50%);
-  width: 54%;
-  height: clamp(70px, 16vw, 185px);
+  width: 52%;
+  height: clamp(100px, 22vw, 280px);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -495,11 +496,11 @@ body:not(:hover) .cursor-follower { opacity: 0; }
 /* ---- Smoke wisps: start at grate level, drift up ---- */
 .ag-smokes {
   position: absolute;
-  bottom: 50%;
+  bottom: 79%;
   left: 50%;
   transform: translateX(-50%);
   width: 72%;
-  height: clamp(110px, 22vw, 250px);
+  height: clamp(160px, 34vw, 420px);
   pointer-events: none;
 }
 
