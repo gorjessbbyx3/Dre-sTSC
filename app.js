@@ -18,7 +18,7 @@
     "Loading something delicious…",
     "Stoking the hickory smoke…",
     "Marinating for 8 hours…",
-    "Seasoned with Southern soul…",
+    "Seasoned with Southern pride…",
     "Almost ready — hang tight…",
   ];
 
@@ -75,7 +75,7 @@ function startHeroEntrance() {
   // 5. Typewriter for sub-tagline
   setTimeout(() => {
     sub.style.opacity = "1";
-    typewriter(sub, "Hickory smoke · Southern soul · Island aloha", 45);
+    typewriter(sub, "Hickory smoke · Southern roots · Island aloha", 45);
   }, 1800);
 
   // 6. CTAs fade up
