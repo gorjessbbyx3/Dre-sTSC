@@ -392,6 +392,11 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   overflow: hidden;
 }
 /* ---------- ABOUT GRILL BACKGROUND ---------- */
+/* Lift the text content above the grill */
+.about > .container {
+  position: relative;
+  z-index: 2;
+}
 .about-grill {
   position: absolute;
   top: 50%;
@@ -402,7 +407,8 @@ body:not(:hover) .cursor-follower { opacity: 0; }
   height: clamp(305px, 52.4vw, 682px);
   pointer-events: none;
   user-select: none;
-  z-index: 0;
+  z-index: 1;
+  opacity: 0.5;
 }
 
 .ag-svg {
